@@ -1,9 +1,39 @@
 .container {
+  display: grid; 
+  grid-template-columns: repeat(7, 1fr); 
+  grid-template-rows: repeat(6, 1fr);
+  margin: auto;
+  border: 8px solid blue;
+  background-color: blue;
+}
+
+.grid-area {
+  display: grid;
+  border: 9px solid blue;
+  padding: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+body {
+  height: 100vh;
+}
+
+/* .row {
   justify-content: center;
   align-items: center;
-  margin: auto auto auto auto;
-  border: 3px solid blue;
+  border: 5px solid blue;
+  border-radius: 10px;
+  display: grid;
 }
+
+
+.col {
+  justify-content: center;
+  align-items: center;
+  border: 5px solid blue;
+  border-radius: 10px;
+} */
 
 h1 {
   text-align: center;
@@ -11,11 +41,4 @@ h1 {
 
 h2 {
   text-align: center;
-}
-
-div {
-  border: 3px solid blue;
-  font-size: 12vmin;
-  text-align: center;
-  vertical-align: middle;
 }
