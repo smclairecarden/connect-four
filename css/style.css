@@ -1,0 +1,13 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  margin: auto auto auto auto;
+  border: thick;
+}
+
+div {
+  border: 3px solid blue;
+  font-size: 8vmin;
+  text-align: center;
+  vertical-align: middle;
+}
