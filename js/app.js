@@ -37,35 +37,33 @@ resetGame.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
 
+
 function init() {
   gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   resetGame.setAttribute('hidden', true)
-  nextTurn = 1
+  message.className = ""
+  message.textContent = "Welcome! Press start to begin!"
+  winner = null
   T = 'tie'
-  
-  
   render()
 }
-
-
+init()
+console.log(message)
 function render() {
   switchTurn()
   getWinner()
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
-      board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
-      board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = ''
     }
    })
   }
-
+  
 
 function handleClick(evt) {
 const i = (evt.target.id)
@@ -74,13 +72,7 @@ if(gameSquares[i] === null) {
   resetGame.removeAttribute('hidden')
   render()
 }
-console.log(i)
 }
-
-function welcomeMessage() {
-  message.textContent = 'Welcome, Player 1 starts the game!'
-}
-
 
 function switchTurn() {
   nextTurn *= -1
@@ -89,11 +81,23 @@ function switchTurn() {
 
 function renderTurn() {
   if(nextTurn === 1) {
-    message.textContent = 'Your turn, player 2!'
+    message.className = "player1"
+    return message.textContent = "Your turn, player 2!"
   } else if(nextTurn === -1) {
-    message.textContent = 'Your turn, player 1!'
+    message.className = "player2"
+     return message.textContent = "Your turn, player 1!"
   } 
 }
+
+// function getWinner() {
+// for(let i = 0; i < winningCombos.length; i++) {
+//   let winningNum = winningCombos[i]
+//   let num1 = winningCombos[i][0]
+//   let num2 = winningCombos[i][1]
+//   let num3 = winningCombos[i][2]
+//   let num4 = winningCombos[i][3]
+//  }
+// }
 
 function getWinner() {
 winningCombos.forEach(function(combo){
@@ -102,17 +106,19 @@ winningCombos.forEach(function(combo){
     return winner = nextTurn
   }
 })
-  if(!gameSquares.includes(null) && winner === null) winner = T
-}
-
-function renderWinningMessage() {
-  if(winner === 1) {
-    return message.textContent = `Player 1 is the winner! Amazing job!`
-  } else if(winner === -1) {
-    return message.textContent = `Player 2 is the winner! Congratulations!`
-  } else if(winner === T) {
-    return message.textContent = `'It's a tie! Try again?`
+  if(!gameSquares.includes(null) && winner === null) {
+    return winner = T
   }
 }
 
-init()
+function renderWinningMessage() {
+  message.className = "winner"
+  if(winner === 1) {
+    return message.textContent = "Player 1 is the winner! Amazing job!"
+  } else if(winner === -1) {
+    return message.textContent = "Player 2 is the winner! Congratulations!"
+  } else if(winner === T) {
+    return message.textContent = "It's a tie! Try again?"
+  }
+}
+
