@@ -25,27 +25,16 @@ body {
 }
 
 
-
-/* .row {
-  justify-content: center;
-  align-items: center;
-  border: 5px solid blue;
-  border-radius: 10px;
-  display: grid;
-}
-
-
-.col {
-  justify-content: center;
-  align-items: center;
-  border: 5px solid blue;
-  border-radius: 10px;
-} */
-
 h1 {
   text-align: center;
 }
 
 h2 {
   text-align: center;
+}
+
+button {
+  display: grid;
+  width: 10%
+  
 }
