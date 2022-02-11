@@ -7,7 +7,7 @@ let grid = []
 
 const player1 = 1
 const player2 = -1
-let  nextTurn, T
+let  nextTurn, T, winner
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -68,4 +68,18 @@ console.log(i)
 
 function switchTurn() {
   nextTurn *= -1
+}
+
+function getWinner() {
+
+}
+
+function renderWinningMessage() {
+  if(winner === 1) {
+    return message.textContent = `Player 1 is the winner! Amazing job!`
+  } else if(winner === -1) {
+    return message.textContent = `Player 2 is the winner! Congratulations!`
+  } else if(winner === T) {
+    return message.textContent = `'It's a tie! Try again?`
+  }
 }

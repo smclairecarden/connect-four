@@ -35,6 +35,17 @@ h2 {
 
 button {
   display: grid;
-  width: 10%
-  
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  display: inline-block;
+}
+
+#reset {
+  display: inline-block;
 }
