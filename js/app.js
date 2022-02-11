@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-winningCombos = [
+const winningCombos = [
   [0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6],
   [7, 8, 9, 10], [8, 9, 10, 11], [9, 10, 11, 12], [10, 11, 12, 13], [14, 15, 16, 17], [15, 16, 17, 18], [16, 17, 19, 19], [17, 18, 19, 20], [21, 22, 23, 24], [22, 23, 24, 25], [23, 24, 25, 26], [24, 25, 26, 27], [28, 29, 30 ,31], [29, 30, 31, 32], [30, 31, 32, 33], [31, 32, 33, 34], [35, 36, 37, 38], [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41], [0, 7, 14, 21], [7, 14, 21, 28], [14, 21, 28, 35], [1, 8, 15, 22], [8, 15, 22, 29], [15, 22, 29, 36], [2, 9, 16, 23], [9, 16, 23, 30], [16, 23, 30, 37], [3, 10, 17, 24], [10, 17, 24, 31], [17, 24, 31, 38], [4, 11, 18, 25], [11, 18, 25, 32], [18, 25, 32, 39],
   [5, 12, 19, 26], [12, 19, 26, 33], [19, 26, 33, 40],
@@ -13,7 +13,8 @@ let grid = []
 
 const player1 = 1
 const player2 = -1
-let  nextTurn, T, winner
+let  nextTurn = 1
+let T, winner
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -31,6 +32,7 @@ const message = document.querySelector('#message')
 // })
 
 board.addEventListener('click', handleClick)
+resetGame.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -45,6 +47,8 @@ init()
 
 function render() {
   switchTurn()
+  getWinner()
+  renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
       message.textContent = 'Your turn, player 2!'
@@ -77,7 +81,13 @@ function switchTurn() {
 }
 
 function getWinner() {
-
+winningCombos.forEach(function(combo){
+  let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
+  if(youWin === 4) {
+    return winner = nextTurn
+  }
+})
+  if(!gameSquares.includes(null) && winner === null) winner = T
 }
 
 function renderWinningMessage() {
