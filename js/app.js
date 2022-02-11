@@ -14,7 +14,8 @@ let grid = []
 const player1 = 1
 const player2 = -1
 let  nextTurn = 1
-let T, winner
+let winner = null
+let T 
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -38,12 +39,14 @@ resetGame.addEventListener('click', init)
 
 function init() {
   gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-  message.textContent = 'Welcome, Press Start to Begin!'
+  resetGame.setAttribute('hidden', true)
   nextTurn = 1
   T = 'tie'
+  
+  
   render()
 }
-init()
+
 
 function render() {
   switchTurn()
@@ -51,18 +54,16 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      message.textContent = 'Your turn, player 2!'
       board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
-      message.textContent = 'Your turn, player 1!'
       board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
       board.children[idx].textContent = ''
       board.children[idx].style.backgroundColor = ''
     }
-   }); 
+   })
   }
 
 
@@ -70,14 +71,28 @@ function handleClick(evt) {
 const i = (evt.target.id)
 if(gameSquares[i] === null) {
   gameSquares[i] = nextTurn
+  resetGame.removeAttribute('hidden')
   render()
 }
 console.log(i)
 }
 
+function welcomeMessage() {
+  message.textContent = 'Welcome, Player 1 starts the game!'
+}
+
 
 function switchTurn() {
   nextTurn *= -1
+  renderTurn()
+}
+
+function renderTurn() {
+  if(nextTurn === 1) {
+    message.textContent = 'Your turn, player 2!'
+  } else if(nextTurn === -1) {
+    message.textContent = 'Your turn, player 1!'
+  } 
 }
 
 function getWinner() {
@@ -99,3 +114,5 @@ function renderWinningMessage() {
     return message.textContent = `'It's a tie! Try again?`
   }
 }
+
+init()
