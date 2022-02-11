@@ -1,14 +1,19 @@
+body {
+  display: grid;
+}
+
 .container {
   display: grid; 
   grid-template-columns: repeat(7, 1fr); 
   grid-template-rows: repeat(6, 1fr);
+  width: 600px;
   margin: auto;
   border: 8px solid blue;
   background-color: blue;
 }
 
 .grid-area {
-  display: grid;
+  display: flex;
   border: 9px solid blue;
   padding: 30px;
   border-radius: 50%;
@@ -18,6 +23,8 @@
 body {
   height: 100vh;
 }
+
+
 
 /* .row {
   justify-content: center;
