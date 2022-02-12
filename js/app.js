@@ -8,14 +8,21 @@ const winningCombos = [
   [3, 9, 15, 21], [28, 22, 16, 10], [35, 29, 23, 17], [29, 23, 17, 11], [23, 17, 11, 5], [36, 30, 24, 18], [30, 24, 18, 12], [24, 18, 12, 6], [37, 31, 25, 19], [31, 25, 19, 13], [38, 32, 26, 20], [27, 19, 11, 3], [34, 26, 18, 10], [26, 18, 10, 2], [41, 33, 25, 17], [33, 25, 17, 9], [25, 17, 9, 1], [40, 32, 24, 16], [32, 24, 16, 8], [24, 16, 8, 0], [39, 31, 23, 15], [31, 23, 15, 7], [38, 30, 22, 14]
 ]
 
-
 let grid = []
 
 const player1 = 1
 const player2 = -1
-let  nextTurn = 1
 let winner = null
-let T 
+let T, nextTurn
+
+// let row1 = [35, 36, 37, 38, 39, 40, 41]
+// let row2 = [28, 29, 30, 31, 32, 33, 34]
+// let row3 = [21, 22, 23, 24, 25, 26, 27]
+// let row4 = [14, 15, 16, 17, 18, 19, 20]
+// let row5 = [7, 8, 9, 10, 11, 12, 13]
+// let row6 = [0, 1, 2, 3, 4, 5, 6]
+
+// console.log(row1)
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -24,14 +31,40 @@ const theSquares = document.querySelectorAll('.grid-area')
 const startGame = document.querySelector('#start-game')
 const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
+const row0 = document.querySelectorAll('.row0')
+const row1 = document.querySelectorAll('.row1')
+const row2 = document.querySelectorAll('.row2')
+const row3 = document.querySelectorAll('.row3')
+const row4 = document.querySelectorAll('.row4')
+const row5 = document.querySelectorAll('.row5')
+const column0 = document.querySelectorAll('.column0')
+const column1 = document.querySelectorAll('.column1')
+const column2 = document.querySelectorAll('.column2')
+const column3 = document.querySelectorAll('.column3')
+const column4 = document.querySelectorAll('.column4')
+const column5 = document.querySelectorAll('.column5')
+const column6 = document.querySelectorAll('.column6')
 
+let columns = [column0, column1, column2, column3, column4, column5, column6]
+let rows = [row0, row1, row2, row3, row4, row5]
+
+console.log(row5)
 
 /*-------------------------------- Event Listeners --------------------------------*/
+
+for(let i = 0; i < board.length; i++) {
+  board[i].addEventListener('click', function(e) {
+    console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
+  })
+}
 
 // theSquares.forEach((square, idx) => {
 //   square.addEventListener('click', handleClick)
 // })
 
+// board.addEventListener('mouseover', function(board){
+//   board.target.style.color = "darkblue"
+// })
 board.addEventListener('click', handleClick)
 resetGame.addEventListener('click', init)
 
@@ -39,31 +72,65 @@ resetGame.addEventListener('click', init)
 
 
 function init() {
-  gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-  resetGame.setAttribute('hidden', true)
   message.className = ""
   message.textContent = "Welcome! Press start to begin!"
+  gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  resetGame.setAttribute('hidden', true)
+  nextTurn = 1
   winner = null
   T = 'tie'
   render()
 }
 init()
-console.log(message)
+
+
 function render() {
   switchTurn()
+  //placeChip()
   getWinner()
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
+      board.children[idx].classList.add('player1')
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
+      board.children[idx].classList.add('player2')
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
     }
    })
   }
-  
+
+
+
+// function clickHere() {
+//     for(let i = 0; i < board.children.length; i++) {
+//     if(board.children.length === null) {
+//       board.children[0] === nextTurn || board.children[1] === nextTurn || board.children[2] === nextTurn || board.children[3] === nextTurn || board.children[4] === nextTurn || board.children[5] === nextTurn || board.children[6] === nextTurn 
+//     } else if(board.children[0] === 1 || board.children[1] === 1 || board.children[2] === 1 || board.children[3] === 1 || board.children[4] === 1 || board.children[5] === 1 ||  board.children[6] === 1 ||  board.children[0] === -1 || board.children[1] === -1 || board.children[2] === -1 || board.children[3] === -1 || board.children[4] === -1 || board.children[5] === -1 ||  board.children[6] === -1) {
+//       board.children[7] === nextTurn || board.children[8] === nextTurn || board.children[9] === nextTurn || board.children[10] === nextTurn || board.children[11] === nextTurn || board.children[12] === nextTurn || board.children[13] === nextTurn
+//     } else if(board.children[7] === 1 || board.children[8] === 1 || board.children[9] === 1 || board.children[10] === 1 || board.children[11] === 1 || board.children[12] === 1 ||  board.children[13] === 1 || board.children[7] === -1 || board.children[8] === -1 || board.children[9] === -1 || board.children[10] === -1 || board.children[11] === -1 || board.children[12] === -1 || board.children[13] === -1) {
+//       board.children[14] === nextTurn || board.children[15] === nextTurn || board.children[16] === nextTurn || board.children[17] === nextTurn || board.children[18] === nextTurn || board.children[19] === nextTurn ||  board.children[20] === nextTurn
+//     } else if(board.children[14] === 1 || board.children[15] === 1 || board.children[16] === 1 || board.children[17] === 1 || board.children[18] === 1 || board.children[19] === 1 ||  board.children[20] === 1 || board.children[14] === -1 || board.children[15] === -1 || board.children[16] === -1 || board.children[17] === -1 || board.children[18] === -1 || board.children[19] === -1 ||  board.children[20] === -1) {
+//       board.children[21] === nextTurn || board.children[22] === nextTurn || board.children[23] === nextTurn || board.children[24] === nextTurn || board.children[25] === nextTurn || board.children[26] === nextTurn || board.children[27] === nextTurn
+//     } else if(board.children[21] === 1 || board.children[22] === 1 || board.children[23] === 1 || board.children[25] === 1 || board.children[26] === 1 || board.children[27] === 1 ||  board.children[28] === 1 || board.children[21] === -1 || board.children[22] === -1 || board.children[23] === -1 || board.children[24] === -1 || board.children[25] === -1 || board.children[26] === -1 ||  board.children[27] === -1) {
+//       board.children[28] === nextTurn || board.children[29] === nextTurn || board.children[30] === nextTurn || board.children[31] === nextTurn || board.children[32] === nextTurn || board.children[33] === nextTurn || board.children[34] === nextTurn
+//     } else if(board.children[28] === 1 || board.children[29] === 1 || board.children[30] === 1 || board.children[31] === 1 || board.children[32] === 1 || board.children[33] === 1 ||  board.children[34] === 1 || board.children[28] === -1 || board.children[29] === -1 || board.children[30] === -1 || board.children[31] === -1 || board.children[32] === -1 || board.children[33] === -1 ||  board.children[34] === -1) {
+//       board.children[35] === nextTurn || board.children[36] === nextTurn || board.children[37] === nextTurn || board.children[38] === nextTurn || board.children[39] === nextTurn || board.children[40] === nextTurn || board.children[41] === nextTurn
+//     }
+//   }
+// }
+
+// function placeChip(cell) {
+// for(let i = 0; i < board.length; i++) {
+//   let hasChip = board.children[i].hasChildNodes()
+//   if(!hasChip) {
+//     board.children[i].appendChild(cell)
+//   }
+// }
+// }
+
 
 function handleClick(evt) {
 const i = (evt.target.id)
@@ -82,10 +149,10 @@ function switchTurn() {
 function renderTurn() {
   if(nextTurn === 1) {
     message.className = "player1"
-    return message.textContent = "Your turn, player 2!"
+    message.textContent = "Your turn, player 2!"
   } else if(nextTurn === -1) {
     message.className = "player2"
-     return message.textContent = "Your turn, player 1!"
+    message.textContent = "Your turn, player 1!"
   } 
 }
 
@@ -98,6 +165,8 @@ function renderTurn() {
 //   let num4 = winningCombos[i][3]
 //  }
 // }
+
+
 
 function getWinner() {
 winningCombos.forEach(function(combo){
@@ -112,13 +181,15 @@ winningCombos.forEach(function(combo){
 }
 
 function renderWinningMessage() {
-  message.className = "winner"
   if(winner === 1) {
-    return message.textContent = "Player 1 is the winner! Amazing job!"
+    message.className = "winner"
+    message.textContent = "Player 1 is the winner! Amazing job!"
   } else if(winner === -1) {
-    return message.textContent = "Player 2 is the winner! Congratulations!"
+    message.className = "winner"
+    message.textContent = "Player 2 is the winner! Congratulations!"
   } else if(winner === T) {
-    return message.textContent = "It's a tie! Try again?"
+    message.className = "tie"
+    message.textContent = "It's a tie! Try again?"
   }
 }
 
