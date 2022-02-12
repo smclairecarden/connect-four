@@ -2,10 +2,8 @@
 
 const winningCombos = [
   [0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6],
-  [7, 8, 9, 10], [8, 9, 10, 11], [9, 10, 11, 12], [10, 11, 12, 13], [14, 15, 16, 17], [15, 16, 17, 18], [16, 17, 19, 19], [17, 18, 19, 20], [21, 22, 23, 24], [22, 23, 24, 25], [23, 24, 25, 26], [24, 25, 26, 27], [28, 29, 30 ,31], [29, 30, 31, 32], [30, 31, 32, 33], [31, 32, 33, 34], [35, 36, 37, 38], [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41], [0, 7, 14, 21], [7, 14, 21, 28], [14, 21, 28, 35], [1, 8, 15, 22], [8, 15, 22, 29], [15, 22, 29, 36], [2, 9, 16, 23], [9, 16, 23, 30], [16, 23, 30, 37], [3, 10, 17, 24], [10, 17, 24, 31], [17, 24, 31, 38], [4, 11, 18, 25], [11, 18, 25, 32], [18, 25, 32, 39],
-  [5, 12, 19, 26], [12, 19, 26, 33], [19, 26, 33, 40],
-  [6, 13, 20, 27], [13, 20, 27, 34], [20, 27, 34, 41],
-  [3, 9, 15, 21], [28, 22, 16, 10], [35, 29, 23, 17], [29, 23, 17, 11], [23, 17, 11, 5], [36, 30, 24, 18], [30, 24, 18, 12], [24, 18, 12, 6], [37, 31, 25, 19], [31, 25, 19, 13], [38, 32, 26, 20], [27, 19, 11, 3], [34, 26, 18, 10], [26, 18, 10, 2], [41, 33, 25, 17], [33, 25, 17, 9], [25, 17, 9, 1], [40, 32, 24, 16], [32, 24, 16, 8], [24, 16, 8, 0], [39, 31, 23, 15], [31, 23, 15, 7], [38, 30, 22, 14]
+  [7, 8, 9, 10], [8, 9, 10, 11], [9, 10, 11, 12], [10, 11, 12, 13], [14, 15, 16, 17], [15, 16, 17, 18], [16, 17, 19, 19], [17, 18, 19, 20], [21, 22, 23, 24], [22, 23, 24, 25], [23, 24, 25, 26], [24, 25, 26, 27], [28, 29, 30 ,31], [29, 30, 31, 32], [30, 31, 32, 33], [31, 32, 33, 34], [35, 36, 37, 38], [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41], [0, 7, 14, 21], [7, 14, 21, 28], [14, 21, 28, 35], [1, 8, 15, 22], [8, 15, 22, 29], [15, 22, 29, 36], [2, 9, 16, 23], [9, 16, 23, 30], [16, 23, 30, 37], [3, 10, 17, 24], [10, 17, 24, 31], [17, 24, 31, 38], [4, 11, 18, 25], [11, 18, 25, 32], [18, 25, 32, 39], [5, 12, 19, 26], [12, 19, 26, 33], [19, 26, 33, 40],
+  [6, 13, 20, 27], [13, 20, 27, 34], [20, 27, 34, 41], [3, 9, 15, 21], [28, 22, 16, 10], [35, 29, 23, 17], [29, 23, 17, 11], [23, 17, 11, 5], [36, 30, 24, 18], [30, 24, 18, 12], [24, 18, 12, 6], [37, 31, 25, 19], [31, 25, 19, 13], [38, 32, 26, 20], [27, 19, 11, 3], [34, 26, 18, 10], [26, 18, 10, 2], [41, 33, 25, 17], [33, 25, 17, 9], [25, 17, 9, 1], [40, 32, 24, 16], [32, 24, 16, 8], [24, 16, 8, 0], [39, 31, 23, 15], [31, 23, 15, 7], [38, 30, 22, 14]
 ]
 
 let grid = []
@@ -45,26 +43,24 @@ const column4 = document.querySelectorAll('.column4')
 const column5 = document.querySelectorAll('.column5')
 const column6 = document.querySelectorAll('.column6')
 
-let columns = [column0, column1, column2, column3, column4, column5, column6]
-let rows = [row0, row1, row2, row3, row4, row5]
+// let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
 
-console.log(row5)
+let columns = [column0, column1, column2, column3, column4, column5, column6]
+
+console.log(columns)
 
 /*-------------------------------- Event Listeners --------------------------------*/
 
-for(let i = 0; i < board.length; i++) {
-  board[i].addEventListener('click', function(e) {
-    console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
-  })
-}
+// function handleCellMouseOver(e) {
+//   const cell = e.target
 
-// theSquares.forEach((square, idx) => {
-//   square.addEventListener('click', handleClick)
-// })
+//  const [rowIndex, columnIndex] = getCellLocation(cell)
 
-// board.addEventListener('mouseover', function(board){
-//   board.target.style.color = "darkblue"
-// })
+//  console.log(rowIndex, columnIndex)
+  
+// }
+
+
 board.addEventListener('click', handleClick)
 resetGame.addEventListener('click', init)
 
@@ -79,6 +75,7 @@ function init() {
   nextTurn = 1
   winner = null
   T = 'tie'
+  
   render()
 }
 init()
@@ -86,7 +83,6 @@ init()
 
 function render() {
   switchTurn()
-  //placeChip()
   getWinner()
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
@@ -102,34 +98,20 @@ function render() {
    })
   }
 
-
-
-// function clickHere() {
-//     for(let i = 0; i < board.children.length; i++) {
-//     if(board.children.length === null) {
-//       board.children[0] === nextTurn || board.children[1] === nextTurn || board.children[2] === nextTurn || board.children[3] === nextTurn || board.children[4] === nextTurn || board.children[5] === nextTurn || board.children[6] === nextTurn 
-//     } else if(board.children[0] === 1 || board.children[1] === 1 || board.children[2] === 1 || board.children[3] === 1 || board.children[4] === 1 || board.children[5] === 1 ||  board.children[6] === 1 ||  board.children[0] === -1 || board.children[1] === -1 || board.children[2] === -1 || board.children[3] === -1 || board.children[4] === -1 || board.children[5] === -1 ||  board.children[6] === -1) {
-//       board.children[7] === nextTurn || board.children[8] === nextTurn || board.children[9] === nextTurn || board.children[10] === nextTurn || board.children[11] === nextTurn || board.children[12] === nextTurn || board.children[13] === nextTurn
-//     } else if(board.children[7] === 1 || board.children[8] === 1 || board.children[9] === 1 || board.children[10] === 1 || board.children[11] === 1 || board.children[12] === 1 ||  board.children[13] === 1 || board.children[7] === -1 || board.children[8] === -1 || board.children[9] === -1 || board.children[10] === -1 || board.children[11] === -1 || board.children[12] === -1 || board.children[13] === -1) {
-//       board.children[14] === nextTurn || board.children[15] === nextTurn || board.children[16] === nextTurn || board.children[17] === nextTurn || board.children[18] === nextTurn || board.children[19] === nextTurn ||  board.children[20] === nextTurn
-//     } else if(board.children[14] === 1 || board.children[15] === 1 || board.children[16] === 1 || board.children[17] === 1 || board.children[18] === 1 || board.children[19] === 1 ||  board.children[20] === 1 || board.children[14] === -1 || board.children[15] === -1 || board.children[16] === -1 || board.children[17] === -1 || board.children[18] === -1 || board.children[19] === -1 ||  board.children[20] === -1) {
-//       board.children[21] === nextTurn || board.children[22] === nextTurn || board.children[23] === nextTurn || board.children[24] === nextTurn || board.children[25] === nextTurn || board.children[26] === nextTurn || board.children[27] === nextTurn
-//     } else if(board.children[21] === 1 || board.children[22] === 1 || board.children[23] === 1 || board.children[25] === 1 || board.children[26] === 1 || board.children[27] === 1 ||  board.children[28] === 1 || board.children[21] === -1 || board.children[22] === -1 || board.children[23] === -1 || board.children[24] === -1 || board.children[25] === -1 || board.children[26] === -1 ||  board.children[27] === -1) {
-//       board.children[28] === nextTurn || board.children[29] === nextTurn || board.children[30] === nextTurn || board.children[31] === nextTurn || board.children[32] === nextTurn || board.children[33] === nextTurn || board.children[34] === nextTurn
-//     } else if(board.children[28] === 1 || board.children[29] === 1 || board.children[30] === 1 || board.children[31] === 1 || board.children[32] === 1 || board.children[33] === 1 ||  board.children[34] === 1 || board.children[28] === -1 || board.children[29] === -1 || board.children[30] === -1 || board.children[31] === -1 || board.children[32] === -1 || board.children[33] === -1 ||  board.children[34] === -1) {
-//       board.children[35] === nextTurn || board.children[36] === nextTurn || board.children[37] === nextTurn || board.children[38] === nextTurn || board.children[39] === nextTurn || board.children[40] === nextTurn || board.children[41] === nextTurn
-//     }
-//   }
-// }
-
-// function placeChip(cell) {
-// for(let i = 0; i < board.length; i++) {
-//   let hasChip = board.children[i].hasChildNodes()
-//   if(!hasChip) {
-//     board.children[i].appendChild(cell)
-//   }
-// }
-// }
+  function clickHere() {
+  let column = columns[parseInt(event.target.id)]
+  for(let i = 0; i < column.length; i++) {
+    if(winner === null) {
+      return
+    } else if(gameSquares[column[i]] === null) {
+      gameSquares[column[i]] === nextTurn
+    } 
+  }
+  getWinner()
+  switchTurn()
+  render()
+  return
+  }
 
 
 function handleClick(evt) {
@@ -138,6 +120,7 @@ if(gameSquares[i] === null) {
   gameSquares[i] = nextTurn
   resetGame.removeAttribute('hidden')
   render()
+  clickHere()
 }
 }
 
@@ -165,8 +148,6 @@ function renderTurn() {
 //   let num4 = winningCombos[i][3]
 //  }
 // }
-
-
 
 function getWinner() {
 winningCombos.forEach(function(combo){
