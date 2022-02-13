@@ -43,11 +43,10 @@ const column4 = document.querySelectorAll('.column4')
 const column5 = document.querySelectorAll('.column5')
 const column6 = document.querySelectorAll('.column6')
 
-let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
+// let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
 
-// let columns = [column0, column1, column2, column3, column4, column5, column6]
+let columns = [column0, column1, column2, column3, column4, column5, column6]
 
-console.log(columns)
 
 /*-------------------------------- Event Listeners --------------------------------*/
 
@@ -95,24 +94,8 @@ function render() {
     } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
     }
-   })
-  }
-
-  // function clickHere() {
-  // let column = columns(event.target.id)
-  // for(let i = 0; i < columns.length; i++) {
-  //   if(winner === null) {
-  //     return
-  //   } else if(gameSquares[column[i]] === null) {
-  //     gameSquares[column[i]] === nextTurn
-  //   } 
-  // }
-  // getWinner()
-  // switchTurn()
-  // render()
-  // return
-
-  // }
+  })
+}
 
 
 function handleClick(evt) {
@@ -121,10 +104,25 @@ if(gameSquares[i] === null) {
   gameSquares[i] = nextTurn
   resetGame.removeAttribute('hidden')
   render()
-  //clickHere()
+  clickHere()
 }
-console.log(i)
 }
+
+function clickHere() {
+  let column = columns[parseInt(event.target.id)]
+  for(let i = 0; i < column.length; i++) {
+    if(winner === null) {
+      return
+    } else if(gameSquares[column[i]] === null) {
+      gameSquares[column[i]] === nextTurn
+    } 
+  }
+  getWinner()
+  switchTurn()
+  render()
+  return
+
+  }
 
 function switchTurn() {
   nextTurn *= -1
@@ -138,7 +136,7 @@ function renderTurn() {
   } else if(nextTurn === -1) {
     message.className = "player2"
     message.textContent = "Your turn, player 1!"
-  } 
+    } 
 }
 
 // function getWinner() {
