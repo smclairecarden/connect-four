@@ -13,14 +13,6 @@ const player2 = -1
 let winner = null
 let T, nextTurn
 
-// let row1 = [35, 36, 37, 38, 39, 40, 41]
-// let row2 = [28, 29, 30, 31, 32, 33, 34]
-// let row3 = [21, 22, 23, 24, 25, 26, 27]
-// let row4 = [14, 15, 16, 17, 18, 19, 20]
-// let row5 = [7, 8, 9, 10, 11, 12, 13]
-// let row6 = [0, 1, 2, 3, 4, 5, 6]
-
-// console.log(row1)
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -43,22 +35,10 @@ const column4 = document.querySelectorAll('.column4')
 const column5 = document.querySelectorAll('.column5')
 const column6 = document.querySelectorAll('.column6')
 
-// let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
-
-let columns = [column0, column1, column2, column3, column4, column5, column6]
+let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
-
-// function handleCellMouseOver(e) {
-//   const cell = e.target
-
-//  const [rowIndex, columnIndex] = getCellLocation(cell)
-
-//  console.log(rowIndex, columnIndex)
-  
-// }
-
 
 board.addEventListener('click', handleClick)
 resetGame.addEventListener('click', init)
@@ -99,30 +79,37 @@ function render() {
 
 
 function handleClick(evt) {
-const i = (evt.target.id)
-if(gameSquares[i] === null) {
-  gameSquares[i] = nextTurn
+const id = (evt.target.id)
+if(gameSquares[id] === null) {
+   gameSquares[id] = nextTurn
   resetGame.removeAttribute('hidden')
   render()
-  clickHere()
+  clickHere(id)
 }
 }
 
-function clickHere() {
-  let column = columns[parseInt(event.target.id)]
-  for(let i = 0; i < column.length; i++) {
-    if(winner === null) {
-      return
-    } else if(gameSquares[column[i]] === null) {
-      gameSquares[column[i]] === nextTurn
-    } 
-  }
-  getWinner()
-  switchTurn()
-  render()
-  return
+// If it doesn’t give ownership of that cell to the player who’s turn it is, stop the loop, and continue on with the rest of the code
 
+function clickHere(id) {
+
+  for(let i = 0; i < columns.length; i++) {
+
+    if(columns[i].includes(parseInt(id))) {
+      Math.max(...columns[i])
+      if(gameSquares[Math.max(...columns[i])] === null) {
+        board.children[Math.max(...columns[i])] = nextTurn
+      } else if(gameSquares[Math.max(...columns[i])] === 1 || gameSquares[Math.max(...columns[i])] === -1 ) {
+        board.children[Math.max(...columns[i]) - 7] = nextTurn
+        break;
+      } else {
+        break;
+      }
+    }
+    
+    render()
+    switchTurn()
   }
+}
 
 function switchTurn() {
   nextTurn *= -1
@@ -173,4 +160,3 @@ function renderWinningMessage() {
     message.textContent = "It's a tie! Try again?"
   }
 }
-
