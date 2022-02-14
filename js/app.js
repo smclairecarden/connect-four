@@ -62,6 +62,7 @@ init()
 
 function render() {
   switchTurn()
+  resetGame.removeAttribute('hidden')
   getWinner()
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
@@ -81,10 +82,9 @@ function render() {
 function handleClick(evt) {
 const id = (evt.target.id)
 if(gameSquares[id] === null) {
-   gameSquares[id] = nextTurn
-  resetGame.removeAttribute('hidden')
-  render()
   clickHere(id)
+  render()
+ 
 }
 }
 
@@ -93,21 +93,16 @@ if(gameSquares[id] === null) {
 function clickHere(id) {
 
   for(let i = 0; i < columns.length; i++) {
-
     if(columns[i].includes(parseInt(id))) {
-      Math.max(...columns[i])
-      if(gameSquares[Math.max(...columns[i])] === null) {
-        board.children[Math.max(...columns[i])] = nextTurn
-      } else if(gameSquares[Math.max(...columns[i])] === 1 || gameSquares[Math.max(...columns[i])] === -1 ) {
-        board.children[Math.max(...columns[i]) - 7] = nextTurn
-        break;
-      } else {
-        break;
-      }
+      columns[i].forEach(function(col, idx) {
+        if(idx === null ) {
+          gameSquares[Math.max(...columns[i])] = nextTurn
+        } 
+        if(idx === 1 || idx === -1) {
+          gameSquares[Math.max(...columns[i])] = nextTurn
+        } 
+      })
     }
-    
-    render()
-    switchTurn()
   }
 }
 
