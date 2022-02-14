@@ -12,7 +12,7 @@ body {
   padding: 0;
   border: 8px solid blue;
   background-color: blue;
-  box-shadow: 10px 10px rgb(0 0 0 / 0.4);
+  box-shadow: 10px 10px rgb(0 0 0 / 0.5);
 }
 
 .grid-area {
