@@ -59,7 +59,6 @@ function init() {
 }
 init()
 
-
 function render() {
   switchTurn()
   resetGame.removeAttribute('hidden')
@@ -88,21 +87,19 @@ if(gameSquares[id] === null) {
 }
 }
 
-// If it doesn’t give ownership of that cell to the player who’s turn it is, stop the loop, and continue on with the rest of the code
-
 function clickHere(id) {
-
   for(let i = 0; i < columns.length; i++) {
     if(columns[i].includes(parseInt(id))) {
-      columns[i].forEach(function(col, idx) {
-        if(idx === null ) {
+      columns[i].forEach(function(col, id) {
+        if(id === null) {
           gameSquares[Math.max(...columns[i])] = nextTurn
-        } 
-        if(idx === 1 || idx === -1) {
+        } else if(id === 1 || id === -1) {
           gameSquares[Math.max(...columns[i])] = nextTurn
-        } 
+          columns[i].shift(id)
+        }   
       })
     }
+    
   }
 }
 
@@ -115,7 +112,7 @@ function renderTurn() {
   if(nextTurn === 1) {
     message.className = "player1"
     message.textContent = "Your turn, player 2!"
-  } else if(nextTurn === -1) {
+    } else if(nextTurn === -1) {
     message.className = "player2"
     message.textContent = "Your turn, player 1!"
     } 
@@ -137,7 +134,7 @@ winningCombos.forEach(function(combo){
   if(youWin === 4) {
     return winner = nextTurn
   }
-})
+  })
   if(!gameSquares.includes(null) && winner === null) {
     return winner = T
   }
