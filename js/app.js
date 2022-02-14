@@ -20,20 +20,6 @@ const theSquares = document.querySelectorAll('.grid-area')
 const startGame = document.querySelector('#start-game')
 const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
-const row0 = document.querySelectorAll('.row0')
-const row1 = document.querySelectorAll('.row1')
-const row2 = document.querySelectorAll('.row2')
-const row3 = document.querySelectorAll('.row3')
-const row4 = document.querySelectorAll('.row4')
-const row5 = document.querySelectorAll('.row5')
-const column0 = document.querySelectorAll('.column0')
-const column1 = document.querySelectorAll('.column1')
-const column2 = document.querySelectorAll('.column2')
-const column3 = document.querySelectorAll('.column3')
-const column4 = document.querySelectorAll('.column4')
-const column5 = document.querySelectorAll('.column5')
-const column6 = document.querySelectorAll('.column6')
-
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
@@ -79,7 +65,6 @@ function render() {
 function handleClick(evt) {
 const id = (evt.target.id)
 if(gameSquares[id] === null) {
-  console.log(id)
   clickHere(id)
   render()
 }
@@ -129,7 +114,7 @@ function getWinner() {
 winningCombos.forEach(function(combo){
   let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
   if(youWin === 4) {
-    confetti.start(5000)
+    confetti.start(4000)
     return winner = nextTurn  
   }
   })
