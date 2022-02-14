@@ -6,13 +6,12 @@ const winningCombos = [
   [6, 13, 20, 27], [13, 20, 27, 34], [22, 16, 10, 4], [20, 27, 34, 41], [3, 9, 15, 21], [28, 22, 16, 10], [35, 29, 23, 17], [29, 23, 17, 11], [23, 17, 11, 5], [36, 30, 24, 18], [30, 24, 18, 12], [24, 18, 12, 6], [37, 31, 25, 19], [31, 25, 19, 13], [38, 32, 26, 20], [27, 19, 11, 3], [34, 26, 18, 10], [26, 18, 10, 2], [41, 33, 25, 17], [33, 25, 17, 9], [25, 17, 9, 1], [40, 32, 24, 16], [32, 24, 16, 8], [24, 16, 8, 0], [39, 31, 23, 15], [31, 23, 15, 7], [38, 30, 22, 14]
 ]
 
-let grid = []
 
 const player1 = 1
 const player2 = -1
 let winner = null
 let T, nextTurn
-
+let columns = []
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -35,7 +34,6 @@ const column4 = document.querySelectorAll('.column4')
 const column5 = document.querySelectorAll('.column5')
 const column6 = document.querySelectorAll('.column6')
 
-let columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
@@ -50,11 +48,11 @@ function init() {
   message.className = ""
   message.textContent = "Welcome! Press start to begin!"
   gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
   resetGame.setAttribute('hidden', true)
   nextTurn = 1
   winner = null
   T = 'tie'
-  
   render()
 }
 init()
@@ -98,8 +96,7 @@ function clickHere(id) {
           columns[i].shift(id)
         }   
       })
-    }
-    
+    } 
   }
 }
 
