@@ -1,6 +1,7 @@
 body {
   display: grid;
   background-color: lightgray;
+  height: 100vh;
 }
 
 .container {
@@ -8,7 +9,7 @@ body {
   grid-template-columns: repeat(7, 1fr); 
   grid-template-rows: repeat(6, 1fr);
   width: 600px;
-  margin-bottom: 150px;
+  margin-bottom: 25px;
   padding: 0;
   border: 8px solid blue;
   background-color: blue;
@@ -23,53 +24,43 @@ body {
   background-color: white;
 }
 
-body {
-  height: 100vh;
-}
-
 
 h1 {
   text-align: center;
   font-family: 'Rowdies', cursive;
   font-size: 100px;
   color: red;
-  padding: 50px;
   margin: 0;
   text-shadow: 10px 10px rgb(0 0 0 / 0.5);
-  margin-top: 50px;
-  margin-bottom: 0;
+  
 }
 
 h2 {
   text-align: center;
   font-family: 'Rowdies', cursive;
   font-size: 40px;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 75px;
+  margin: 0;
 }
 
 button {
-  display: grid;
+  display: flex;
   width: 60px;
   height: 40px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 0;
-  margin-bottom: 100px;
   justify-content: center;
 }
 
-#start {
+/* #start {
   display: inline-block;
   margin: 5px;
-}
+} */
 
-#reset {
-  display: inline-block;
+#reset-game {
+  display: grid;
   text-align: center;
   justify-content: center;
-  
+  margin-bottom: 25px;
 }
 
 @media only screen and (max-width: 768px) {
