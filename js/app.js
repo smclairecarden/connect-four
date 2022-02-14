@@ -45,7 +45,6 @@ init()
 
 function render() {
   switchTurn()
-  resetGame.removeAttribute('hidden')
   getWinner()
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
@@ -66,6 +65,7 @@ function handleClick(evt) {
 const id = (evt.target.id)
 if(gameSquares[id] === null) {
   clickHere(id)
+  resetGame.removeAttribute('hidden')
   render()
 }
 }
