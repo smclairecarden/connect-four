@@ -1,5 +1,6 @@
 body {
   display: grid;
+  background-color: lightgray;
 }
 
 .container {
@@ -11,6 +12,7 @@ body {
   padding: 0;
   border: 8px solid blue;
   background-color: blue;
+  box-shadow: 10px 10px rgb(0 0 0 / 0.4);
 }
 
 .grid-area {
@@ -74,4 +76,12 @@ button {
     margin-left: auto;
     justify-content: center;
   }
+}
+
+.player1 {
+  color: red;
+}
+
+.player2 {
+  color: rgb(253, 253, 17);
 }

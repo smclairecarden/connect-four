@@ -47,8 +47,8 @@ resetGame.addEventListener('click', init)
 function init() {
   message.className = ""
   message.textContent = "Welcome! Press start to begin!"
-  gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-  columns = [[35, 28, 21, 14, 7, 0], [36, 29, 22, 15, 8, 1], [37, 30, 23, 16, 9, 2], [38, 31, 24, 17, 10, 3], [39, 32, 25, 18, 11, 4], [40, 33, 26, 19, 12, 5], [41, 34, 27, 20, 13, 6]]
+  gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  columns = [[42, 35, 28, 21, 14, 7, 0], [43, 36, 29, 22, 15, 8, 1], [44, 37, 30, 23, 16, 9, 2], [45, 38, 31, 24, 17, 10, 3], [46, 39, 32, 25, 18, 11, 4], [47, 40, 33, 26, 19, 12, 5], [48, 41, 34, 27, 20, 13, 6]]
   resetGame.setAttribute('hidden', true)
   nextTurn = 1
   winner = null
@@ -81,7 +81,6 @@ const id = (evt.target.id)
 if(gameSquares[id] === null) {
   clickHere(id)
   render()
- 
 }
 }
 
@@ -107,11 +106,11 @@ function switchTurn() {
 
 function renderTurn() {
   if(nextTurn === 1) {
-    message.className = "player1"
-    message.textContent = "Your turn, player 2!"
-    } else if(nextTurn === -1) {
     message.className = "player2"
-    message.textContent = "Your turn, player 1!"
+    message.textContent = "Your turn, Player 2!"
+    } else if(nextTurn === -1) {
+    message.className = "player1"
+    message.textContent = "Your turn, Player 1!"
     } 
 }
 
@@ -139,10 +138,10 @@ winningCombos.forEach(function(combo){
 
 function renderWinningMessage() {
   if(winner === 1) {
-    message.className = "winner"
+    message.className = "player1"
     message.textContent = "Player 1 is the winner! Amazing job!"
   } else if(winner === -1) {
-    message.className = "winner"
+    message.className = "player2"
     message.textContent = "Player 2 is the winner! Congratulations!"
   } else if(winner === T) {
     message.className = "tie"
