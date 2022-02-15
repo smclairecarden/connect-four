@@ -31,7 +31,7 @@ resetGame.addEventListener('click', init)
 
 function init() {
   message.className = ""
-  message.innerHTML = "Welcome! Player 1 starts the game!"
+  message.innerHTML = "Welcome! <span class='player1'>Player 1</span> starts the game!"
   gameSquares = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   columns = [[42, 35, 28, 21, 14, 7, 0], [43, 36, 29, 22, 15, 8, 1], [44, 37, 30, 23, 16, 9, 2], [45, 38, 31, 24, 17, 10, 3], [46, 39, 32, 25, 18, 11, 4], [47, 40, 33, 26, 19, 12, 5], [48, 41, 34, 27, 20, 13, 6]]
   resetGame.setAttribute('hidden', true)
@@ -89,9 +89,9 @@ function switchTurn() {
 }
 
 function renderTurn() {
-  if(nextTurn === 1) {
+  if(nextTurn === -1) {
     message.innerHTML = "Your turn, <span class='player2'>Player 2</span>!"
-    } else if(nextTurn === -1) {
+    } else if(nextTurn === 1) {
     message.innerHTML = "Your turn, <span class='player1'>Player 1</span>!"
     } 
 }
