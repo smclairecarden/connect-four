@@ -19,6 +19,7 @@ const board = document.querySelector('.container')
 const startGame = document.querySelector('#start-game')
 const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
+const chipSound = new Audio('../audio/connect-four-sound.mp3')
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
@@ -48,10 +49,9 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      // board.children[idx].className = 'player1Chip animate__animated animate__backInDown'
+      //board.children[idx].className = 'player1Chip'
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
-      // board.children[idx].className = 'player2Chip animate__animated animate__backInDown'
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
@@ -63,6 +63,8 @@ function handleClick(evt) {
 const id = (evt.target.id)
 if(gameSquares[id] === null) {
   clickHere(id)
+  chipSound.volume = .10
+  chipSound.play()
   resetGame.removeAttribute('hidden')
   renderTurn()
   render()
