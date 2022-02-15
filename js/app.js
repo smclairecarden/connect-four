@@ -64,6 +64,7 @@ const id = (evt.target.id)
 if(gameSquares[id] === null) {
   clickHere(id)
   resetGame.removeAttribute('hidden')
+  renderTurn()
   render()
 }
 }
@@ -85,7 +86,6 @@ function clickHere(id) {
 
 function switchTurn() {
   nextTurn *= -1
-  renderTurn()
 }
 
 function renderTurn() {
