@@ -76,7 +76,11 @@ button {
 
 .player1Chip {
   border-radius: 50%;
+  color: red;
+  animation-name: drop;
+  animation-duration: 1s;
 }
+
 
 @media only screen and (max-width: 768px) {
 .container {
