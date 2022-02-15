@@ -16,7 +16,6 @@ let columns = []
 /*------------------------ Cached Element References ------------------------*/
 
 const board = document.querySelector('.container')
-const theSquares = document.querySelectorAll('.grid-area')
 const startGame = document.querySelector('#start-game')
 const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
@@ -49,10 +48,8 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      board.children[idx].classList.add('player1')
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
-      board.children[idx].classList.add('player2')
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
@@ -92,9 +89,9 @@ function switchTurn() {
 
 function renderTurn() {
   if(nextTurn === 1) {
-    message.innerHTML = "Your turn, <span class='player1'>Player 2</span>!"
+    message.innerHTML = "Your turn, <span class='player2'>Player 2</span>!"
     } else if(nextTurn === -1) {
-    message.innerHTML = "Your turn, <span class='player2'>Player 1</span>!"
+    message.innerHTML = "Your turn, <span class='player1'>Player 1</span>!"
     } 
 }
 
