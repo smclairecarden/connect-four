@@ -48,15 +48,16 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
+      // board.children[idx].className = 'player1Chip animate__animated animate__backInDown'
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
+      // board.children[idx].className = 'player2Chip animate__animated animate__backInDown'
       board.children[idx].style.backgroundColor = 'yellow';
     } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
     }
   })
 }
-
 
 function handleClick(evt) {
 const id = (evt.target.id)

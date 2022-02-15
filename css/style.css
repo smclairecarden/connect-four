@@ -63,19 +63,6 @@ button {
   margin-bottom: 25px;
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    display: grid;
-  }
-
-  .container {
-    display: grid;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
-  }
-}
-
 .player1 {
   color: red;
   animation: backwards;
@@ -85,4 +72,20 @@ button {
   color: rgb(253, 253, 17);
 }
 
+.player1Chip {
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    display: grid;
+  }
+
+.container {
+    display: grid;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+}
 
