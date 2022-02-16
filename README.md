@@ -17,6 +17,5 @@ technologies used:
 
 Icebox Items -
   - Add a  timer for timed games of Connect Four
-  - Light/Dark Mode
   - falling animation for chips
   
