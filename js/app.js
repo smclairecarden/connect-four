@@ -21,12 +21,15 @@ const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
 const chipSound = new Audio('../audio/connect-four-sound.mp3')
 const party = new Audio('../audio/party-horn.mp3')
+const lightNDarkBtn = document.querySelector('#lightNDark')
+const body = document.querySelector('body')
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
 
 board.addEventListener('click', handleClick)
 resetGame.addEventListener('click', init)
+lightNDarkBtn.addEventListener('click', toggleLightDark)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -119,9 +122,6 @@ winningCombos.forEach(function(combo){
     return winner = nextTurn  
   }
   })
-  if(!gameSquares.includes(null) && winner === null) {
-    return winner = T
-  }
 }
 
 function renderWinningMessage() {
@@ -129,8 +129,18 @@ function renderWinningMessage() {
     message.innerHTML = "<span class='player1'>Player 1</span> is the winner! Amazing job!"
   } else if(winner === -1) {
     message.innerHTML = "<span class='player2'>Player 2</span> is the winner! Congratulations!"
-  } else if(winner === T) {
-    message.className = "tie"
-    message.innerHTML = "It's a tie! Try again?"
   }
 }
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
+
+function checkDarkPref() {
+  if(window.matchMedia("(prefers-color-scheme:dark)").matches && body.className !== "dark")
+  {
+    toggleLightDark()
+  }
+} 
+
+checkDarkPref()

@@ -44,13 +44,20 @@ h2 {
   margin: 0;
 }
 
-button {
+#reset-game {
   display: flex;
   width: 60px;
   height: 40px;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
+}
+
+#lightNDark {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 60px;
+  height: 40px;
 }
 
 /* #start {
