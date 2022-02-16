@@ -5,6 +5,7 @@ body {
   --text-color: black;
   --light-n-dark-btn-content: "Dark Mode";
   --light-n-dark-btn-bg: white;
+  --light-n-dark-text-clr: black;
   --shadow: 10px 10px rgb(0 0 0 / 0.5);
   display: grid;
   background-color: var(--body-bg);
@@ -13,6 +14,7 @@ body {
 }
 
 body.dark {
+  --light-n-dark-text-clr: white;
   --body-bg: black;
   --grid-bg: gray;
   --text-color: gray;
@@ -20,7 +22,6 @@ body.dark {
   --light-n-dark-btn-content: "Light Mode";
   background-color: var(--body-bg);
 }
-
 
 .container {
   display: grid; 
@@ -82,9 +83,11 @@ h2 {
   width: 70px;
   height: 40px;
   background-color: var(--light-n-dark-btn-bg);
+  color: var(--light-n-dark-text-clr);
 }
 
 #lightNDark::after {
+  color: var(--light-n-dark-text-clr);
   color: var(--inverted-light-n-dark);
   background-color: var(--inverted-text-color);
   content: var(--light-n-dark-btn-content);
@@ -112,6 +115,5 @@ h2 {
     font-size: 1.5rem;
     width: 400px;
   }
-
 }
 
