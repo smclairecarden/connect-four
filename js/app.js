@@ -20,6 +20,7 @@ const startGame = document.querySelector('#start-game')
 const resetGame = document.querySelector('#reset-game')
 const message = document.querySelector('#message')
 const chipSound = new Audio('../audio/connect-four-sound.mp3')
+const party = new Audio('../audio/party-horn.mp3')
 
 
 /*-------------------------------- Event Listeners --------------------------------*/
@@ -49,7 +50,7 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      //board.children[idx].className = 'player1Chip'
+      // board.children[idx].className = 'player1Chip'
       board.children[idx].style.backgroundColor = 'red';
     } else if(cir === 1) {
       board.children[idx].style.backgroundColor = 'yellow';
@@ -113,6 +114,8 @@ winningCombos.forEach(function(combo){
   let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
   if(youWin === 4) {
     confetti.start(2000)
+    party.volume = .10
+    party.play()
     return winner = nextTurn  
   }
   })

@@ -9,6 +9,7 @@ body {
   grid-template-columns: repeat(7, 1fr); 
   grid-template-rows: repeat(6, 1fr);
   width: 600px;
+  height: 500px;
   margin-bottom: 25px;
   padding: 0;
   border: 8px solid blue;
@@ -74,19 +75,11 @@ button {
   color: rgb(253, 253, 17);
 }
 
-.player1Chip {
-  border-radius: 50%;
-  color: red;
-  animation: 3s linear 1s infinite running slidein;
-}
-
-
 @media only screen and (max-width: 768px) {
-.container {
-    display: grid;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
+  body {
+    font-size: 1.5rem;
+    width: 400px;
   }
+
 }
 
