@@ -53,11 +53,10 @@ function render() {
   renderWinningMessage()
   gameSquares.forEach(function(cir, idx){
     if(cir === -1) {
-      // board.children[idx].className = 'player1Chip'
       board.children[idx].style.backgroundColor = 'red';
-    } else if(cir === 1) {
+      } else if(cir === 1) {
       board.children[idx].style.backgroundColor = 'yellow';
-    } else if(cir === null) {
+      } else if(cir === null) {
       board.children[idx].style.backgroundColor = ''
     }
   })
@@ -65,14 +64,14 @@ function render() {
 
 function handleClick(evt) {
 const id = (evt.target.id)
-if(gameSquares[id] === null) {
-  clickHere(id)
-  chipSound.volume = .10
-  chipSound.play()
-  resetGame.removeAttribute('hidden')
-  renderTurn()
-  render()
-}
+  if(gameSquares[id] === null) {
+    clickHere(id)
+    chipSound.volume = .10
+    chipSound.play()
+    resetGame.removeAttribute('hidden')
+    renderTurn()
+    render()
+  }
 }
 
 function clickHere(id) {
@@ -101,16 +100,6 @@ function renderTurn() {
     message.innerHTML = "Your turn, <span class='player1'>Player 1</span>!"
     } 
 }
-
-// function getWinner() {
-// for(let i = 0; i < winningCombos.length; i++) {
-//   let winningNum = winningCombos[i]
-//   let num1 = winningCombos[i][0]
-//   let num2 = winningCombos[i][1]
-//   let num3 = winningCombos[i][2]
-//   let num4 = winningCombos[i][3]
-//  }
-// }
 
 function getWinner() {
 winningCombos.forEach(function(combo){

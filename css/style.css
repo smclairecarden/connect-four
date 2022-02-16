@@ -90,11 +90,6 @@ h2 {
   content: var(--light-n-dark-btn-content);
 }
 
-/* #start {
-  display: inline-block;
-  margin: 5px;
-} */
-
 #reset-game {
   display: grid;
   text-align: center;
