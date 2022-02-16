@@ -5,6 +5,7 @@ body {
   --text-color: black;
   --light-n-dark-btn-content: "Dark Mode";
   --light-n-dark-btn-bg: white;
+  --shadow: 10px 10px rgb(0 0 0 / 0.5);
   display: grid;
   background-color: var(--body-bg);
   height: 100vh;
@@ -17,6 +18,7 @@ body.dark {
   --text-color: gray;
   --light-n-dark-btn-bg: gray;
   --light-n-dark-btn-content: "Light Mode";
+  --shadow: 10px 10px rgba(169, 158, 158, 0.5);
   background-color: var(--body-bg);
 }
 
@@ -31,7 +33,7 @@ body.dark {
   padding: 0;
   border: 8px solid blue;
   background-color: blue;
-  box-shadow: 10px 10px rgb(0 0 0 / 0.5);
+  box-shadow: var(--shadow);
 }
 
 .grid-area {
@@ -43,19 +45,18 @@ body.dark {
   cursor: pointer;
 }
 
-.grid-area::after {
-  background-color: var(--inverted-grid-bg);
-}
-
-
 h1 {
   text-align: center;
   font-family: 'Rowdies', cursive;
   font-size: 100px;
   color: red;
   margin: 0;
-  text-shadow: 10px 10px rgb(0 0 0 / 0.5);
+  text-shadow: var(--shadow);
   
+}
+
+h1::after {
+  text-shadow: var(--shadow);
 }
 
 h2 {
