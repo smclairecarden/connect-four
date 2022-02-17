@@ -11,9 +11,9 @@
 </ul>
 
 <h2>What The Game Looks Like:</h2>
-  ![Connect-Four first image](/assets/Connect-Four-1.png)
-  ![Connect-Four second image](/assets/Connect-Four-2.png)
-  ![Connect-Four third image](/assets/Connect-Four-3.png)
+  ![Connect-Four first image](../assets/Connect-Four-1.png)
+  ![Connect-Four second image](../assets/Connect-Four-2.png)
+  ![Connect-Four third image](../assets/Connect-Four-3.png)
 
 <h2>Technologies used:</h2>
 <ul> 
@@ -33,9 +33,9 @@
 
 <h2>Credits:</h2>
 <ul>
-<li>My chip sound effect came from here - <https://freesound.org/people/discokingmusic/sounds/271387/></li> 
-<li>The party horn came from here - <https://freesound.org/people/vewiu/sounds/379617/></li>
-<li>Connect 4 image for favicon - <https://www.gamesofberkeley.com/connect-four-hasbro-hsba5640.html></li>
+<li>My chip sound effect came from here - https://freesound.org/people/discokingmusic/sounds/271387/</li> 
+<li>The party horn came from here - https://freesound.org/people/vewiu/sounds/379617/</li>
+<li>Connect 4 image for favicon - https://www.gamesofberkeley.com/connect-four-hasbro-hsba5640.html</li>
 </ul>
 
   
