@@ -1,12 +1,10 @@
 body {
   --body-bg: lightgray;
   --grid-bg: white;
-  --reset-bg: whitesmoke;
   --text-color: black;
   --light-n-dark-btn-content: "Dark Mode";
   --light-n-dark-btn-bg: white;
   --light-n-dark-text-clr: black;
-  --shadow: 10px 10px rgb(0 0 0 / 0.5);
   display: grid;
   background-color: var(--body-bg);
   height: 100vh;
@@ -14,12 +12,12 @@ body {
 }
 
 body.dark {
-  --light-n-dark-text-clr: white;
   --body-bg: black;
   --grid-bg: gray;
   --text-color: gray;
-  --light-n-dark-btn-bg: gray;
   --light-n-dark-btn-content: "Light Mode";
+  --light-n-dark-btn-bg: gray;
+  --light-n-dark-text-clr: white;
   background-color: var(--body-bg);
 }
 
@@ -33,7 +31,7 @@ body.dark {
   padding: 0;
   border: 8px solid blue;
   background-color: blue;
-  box-shadow: var(--shadow);
+  box-shadow: 10px 10px rgb(0 0 0 / 0.5);
 }
 
 .grid-area {
@@ -51,12 +49,8 @@ h1 {
   font-size: 100px;
   color: red;
   margin: 0;
-  text-shadow: var(--shadow);
+  text-shadow: 10px 10px rgb(0 0 0 / 0.5);
   
-}
-
-h1::after {
-  text-shadow: var(--shadow);
 }
 
 h2 {
@@ -88,8 +82,6 @@ h2 {
 
 #lightNDark::after {
   color: var(--light-n-dark-text-clr);
-  color: var(--inverted-light-n-dark);
-  background-color: var(--inverted-text-color);
   content: var(--light-n-dark-btn-content);
 }
 
@@ -98,12 +90,11 @@ h2 {
   text-align: center;
   justify-content: center;
   margin-bottom: 25px;
-  background-color: var(--reset-bg);
+  background-color: whitesmoke;
 }
 
 .player1 {
   color: red;
-  animation: backwards;
 }
 
 .player2 {
@@ -113,7 +104,7 @@ h2 {
 @media only screen and (max-width: 768px) {
   body {
     font-size: 1.5rem;
-    width: 400px;
+    width: 900px;
     justify-content: center;
     align-items: center;
   }
