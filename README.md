@@ -1,13 +1,13 @@
 # Connect-4
 
 ## About:
-    - For my Unit One Project I chose to do Connect Four, my favorite rainy day recess game in school.
-    - Connect Four is a two player game in which players start with  21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player is able to get four in a row either vertically, horizontally or diagonally the game is over.
+  - For my Unit One Project I chose to do Connect Four, my favorite rainy day recess game in school.
+  - Connect Four is a two player game in which players start with  21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player is able to get four in a row either vertically, horizontally or diagonally the game is over.
 
 
 ## Getting Started:
-    - Play the game here - [Connect4](https://clairecarden-connect-four.surge.sh)
-    - To play, click on the top circle in the row you choose to place your chip, alternating between red and yellow until there is a winner.
+ - Play the game here - <a href='https://clairecarden-connect-four.surge.sh/'>Connect4</a>
+ - To play, click on the top circle in the row you choose to place your chip, alternating between red and yellow until there is a winner.
 
 
 ## What The Game Looks Like:
