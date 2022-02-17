@@ -1,41 +1,38 @@
-<h1>Connect-4</h1>
-<ul>
-  <li>For my Unit One Project I chose to do Connect Four, my favorite rainy day recess game in school.</li> 
-  <li>Connect Four is a two player game in which players start with  21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player is able to get four in a row either vertically, horizontally or diagonally the game is over.</li>
-</ul>
+# Connect-4
 
-<h2>Getting Started:</h2>
-<ul>
-    <li>Play the game here: <clairecarden-connect-four.surge.sh></li>
-    <li>To play, click on the top circle in the row you choose to place your chip, alternating between red and yellow until there is a winner.</li>
-</ul>
+## About:
+    - For my Unit One Project I chose to do Connect Four, my favorite rainy day recess game in school.
+    - Connect Four is a two player game in which players start with  21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player is able to get four in a row either vertically, horizontally or diagonally the game is over.
 
-<h2>What The Game Looks Like:</h2>
-  ![Connect-Four first image](../assets/Connect-Four-1.png)
-  ![Connect-Four second image](../assets/Connect-Four-2.png)
-  ![Connect-Four third image](../assets/Connect-Four-3.png)
 
-<h2>Technologies used:</h2>
-<ul> 
-  <li>HTML5</li> 
-  <li>CSS</li> 
-  <li>JavaScript</li>
-  <li>Bootstrap</li>
-  <li>confetti.js</li>
-  <li>animate.css</li>
-</ul>
+## Getting Started:
+    - Play the game here - [Connect4](https://clairecarden-connect-four.surge.sh)
+    - To play, click on the top circle in the row you choose to place your chip, alternating between red and yellow until there is a winner.
 
-<h2>Icebox Items:</h2>
-<ul>
-  <li>Add a  timer for timed games of Connect Four</li>
-  <li>Falling animation for chips</li>
-</ul>
 
-<h2>Credits:</h2>
-<ul>
-<li>My chip sound effect came from here - https://freesound.org/people/discokingmusic/sounds/271387/</li> 
-<li>The party horn came from here - https://freesound.org/people/vewiu/sounds/379617/</li>
-<li>Connect 4 image for favicon - https://www.gamesofberkeley.com/connect-four-hasbro-hsba5640.html</li>
-</ul>
+## What The Game Looks Like:
+  ![Connect-Four first image](/assets/Connect-Four-1.png)
+  ![Connect-Four second image](/assets/Connect-Four-2.png)
+  ![Connect-Four third image](/assets/Connect-Four-3.png)
+
+## Technologies used:
+
+  - HTML5 
+  - CSS
+  - JavaScript
+  - Bootstrap
+  - confetti.js
+  - animate.css
+
+
+## Icebox Items:
+  - Add a  timer for timed games of Connect Four
+  - Falling animation for chips
+
+## Credits:
+- My chip sound effect came from here - [FreeSound](https://freesound.org/people/discokingmusic/sounds/271387/)
+- The party horn came from here - [FreeSound](https://freesound.org/people/vewiu/sounds/379617/)
+- Connect 4 image for favicon - [Hasbro](https://www.gamesofberkeley.com/connect-four-hasbro-hsba5640.html)
+
 
   
