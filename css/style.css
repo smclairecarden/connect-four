@@ -113,7 +113,9 @@ h2 {
 @media only screen and (max-width: 768px) {
   body {
     font-size: 1.5rem;
-    width: 400px;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
