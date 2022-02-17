@@ -34,6 +34,8 @@
 - My chip sound effect came from here - [FreeSound](https://freesound.org/people/discokingmusic/sounds/271387/)
 - The party horn came from here - [FreeSound](https://freesound.org/people/vewiu/sounds/379617/)
 - Connect 4 image for favicon - [Hasbro](https://www.gamesofberkeley.com/connect-four-hasbro-hsba5640.html)
+- The confetti was created by - [Confetti](https://github.com/mathusummut/)
+- The animation of my title - [animate.css](https://animate.style/)
 
 
   

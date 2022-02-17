@@ -18,7 +18,6 @@ body.dark {
   --light-n-dark-btn-content: "Light Mode";
   --light-n-dark-btn-bg: gray;
   --light-n-dark-text-clr: white;
-  background-color: var(--body-bg);
 }
 
 .container {
