@@ -61,7 +61,7 @@ function render() {
 function handleClick(evt) {
   const id = (evt.target.id)
   if(gameSquares[id] === null) {
-    clickHere(id)
+    bottomRow(id)
     chipSound.volume = .10
     chipSound.play()
     resetGame.removeAttribute('hidden')
@@ -70,7 +70,7 @@ function handleClick(evt) {
   }
 }
 
-function clickHere(id) {
+function bottomRow(id) {
   for(let i = 0; i < columns.length; i++) {
     if(columns[i].includes(parseInt(id))) {
       columns[i].forEach(function(col, id) {
@@ -91,15 +91,15 @@ function switchTurn() {
 
 function renderTurn() {
   if(nextTurn === -1) {
-    message.innerHTML = "Your turn, <span class='player2'>Player 2</span>!"
+      message.innerHTML = "Your turn, <span class='player2'>Player 2</span>!"
     } else if(nextTurn === 1) {
-    message.innerHTML = "Your turn, <span class='player1'>Player 1</span>!"
+      message.innerHTML = "Your turn, <span class='player1'>Player 1</span>!"
     } 
 }
 
 function getWinner() {
 winningCombos.forEach(function(combo){
-  let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
+    let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
   if(youWin === 4) {
     confetti.start(2000)
     party.volume = .10

@@ -24,8 +24,8 @@ body.dark {
   display: grid; 
   grid-template-columns: repeat(7, 1fr); 
   grid-template-rows: repeat(6, 1fr);
-  width: 600px;
-  height: 500px;
+  max-width: 600px;
+  min-height: 500px;
   margin-bottom: 25px;
   padding: 0;
   border: 8px solid blue;
@@ -103,9 +103,9 @@ h2 {
 @media only screen and (max-width: 768px) {
   body {
     font-size: 1.5rem;
-    width: 900px;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
   }
 }
 

@@ -14,70 +14,70 @@
   <script defer src="./js/confetti.js"></script>
   <title>Connect 4</title>
   <link 
-  id="favicon" 
-  rel="icon"
-  href="./assets/favicon-32x32.png"
-  type="image/png" 
-  sizes="32x32"
+    id="favicon" 
+    rel="icon"
+    href="./assets/favicon-32x32.png"
+    type="image/png" 
+    sizes="32x32"
   >
   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
 <body>
   <h1 class="animate__animated animate__rubberBand">Connect 4</h1>
   <h2 id="message">Welcome! Player 1 starts the game!</h2>
   <div class="container">
-      <div class="row0 column0 grid-area" id="0" hidden></div>
-      <div class="row0 column1 grid-area" id="1" hidden></div>
-      <div class="row0 column2 grid-area" id="2" hidden></div>
-      <div class="row0 column3 grid-area" id="3" hidden></div>
-      <div class="row0 column4 grid-area" id="4" hidden></div>
-      <div class="row0 column5 grid-area" id="5" hidden></div>
-      <div class="row0 column6 grid-area" id="6" hidden></div>
-      <div class="row1 column0 grid-area" id="7"></div>
-      <div class="row1 column1 grid-area" id="8"></div>
-      <div class="row1 column2 grid-area" id="9"></div>
-      <div class="row1 column3 grid-area" id="10"></div>
-      <div class="row1 column4 grid-area" id="11"></div>
-      <div class="row1 column5 grid-area" id="12"></div>
-      <div class="row1 column6 grid-area" id="13"></div>
-      <div class="row2 column0 grid-area" id="14"></div>
-      <div class="row2 column1 grid-area" id="15"></div>
-      <div class="row2 column2 grid-area" id="16"></div>
-      <div class="row2 column3 grid-area" id="17"></div>
-      <div class="row2 column4 grid-area" id="18"></div>
-      <div class="row2 column5 grid-area" id="19"></div>
-      <div class="row2 column6 grid-area" id="20"></div>
-      <div class="row3 column0 grid-area" id="21"></div>
-      <div class="row3 column1 grid-area" id="22"></div>
-      <div class="row3 column2 grid-area" id="23"></div> 
-      <div class="row3 column3 grid-area" id="24"></div>
-      <div class="row3 column4 grid-area" id="25"></div>
-      <div class="row3 column5 grid-area" id="26"></div>
-      <div class="row3 column6 grid-area" id="27"></div>
-      <div class="row4 column0 grid-area" id="28"></div>
-      <div class="row4 column1 grid-area" id="29"></div> 
-      <div class="row4 column2 grid-area" id="30"></div>
-      <div class="row4 column3 grid-area" id="31"></div>
-      <div class="row4 column4 grid-area" id="32"></div>
-      <div class="row4 column5 grid-area" id="33"></div>
-      <div class="row4 column6 grid-area" id="34"></div>
-      <div class="row5 column0 grid-area" id="35"></div>  
-      <div class="row5 column1 grid-area" id="36"></div>
-      <div class="row5 column2 grid-area" id="37"></div>
-      <div class="row5 column3 grid-area" id="38"></div>
-      <div class="row5 column4 grid-area" id="39"></div>
-      <div class="row5 column5 grid-area" id="40"></div>
-      <div class="row5 column6 grid-area" id="41"></div>
-      <div class="row6 column0 grid-area" id="42"></div>  
-      <div class="row6 column1 grid-area" id="43"></div>
-      <div class="row6 column2 grid-area" id="44"></div>
-      <div class="row6 column3 grid-area" id="45"></div>
-      <div class="row6 column4 grid-area" id="46"></div>
-      <div class="row6 column5 grid-area" id="47"></div>
-      <div class="row6 column6 grid-area" id="48"></div>
+    <div class="row0 column0 grid-area" id="0" hidden></div>
+    <div class="row0 column1 grid-area" id="1" hidden></div>
+    <div class="row0 column2 grid-area" id="2" hidden></div>
+    <div class="row0 column3 grid-area" id="3" hidden></div>
+    <div class="row0 column4 grid-area" id="4" hidden></div>
+    <div class="row0 column5 grid-area" id="5" hidden></div>
+    <div class="row0 column6 grid-area" id="6" hidden></div>
+    <div class="row1 column0 grid-area" id="7"></div>
+    <div class="row1 column1 grid-area" id="8"></div>
+    <div class="row1 column2 grid-area" id="9"></div>
+    <div class="row1 column3 grid-area" id="10"></div>
+    <div class="row1 column4 grid-area" id="11"></div>
+    <div class="row1 column5 grid-area" id="12"></div>
+    <div class="row1 column6 grid-area" id="13"></div>
+    <div class="row2 column0 grid-area" id="14"></div>
+    <div class="row2 column1 grid-area" id="15"></div>
+    <div class="row2 column2 grid-area" id="16"></div>
+    <div class="row2 column3 grid-area" id="17"></div>
+    <div class="row2 column4 grid-area" id="18"></div>
+    <div class="row2 column5 grid-area" id="19"></div>
+    <div class="row2 column6 grid-area" id="20"></div>
+    <div class="row3 column0 grid-area" id="21"></div>
+    <div class="row3 column1 grid-area" id="22"></div>
+    <div class="row3 column2 grid-area" id="23"></div> 
+    <div class="row3 column3 grid-area" id="24"></div>
+    <div class="row3 column4 grid-area" id="25"></div>
+    <div class="row3 column5 grid-area" id="26"></div>
+    <div class="row3 column6 grid-area" id="27"></div>
+    <div class="row4 column0 grid-area" id="28"></div>
+    <div class="row4 column1 grid-area" id="29"></div> 
+    <div class="row4 column2 grid-area" id="30"></div>
+    <div class="row4 column3 grid-area" id="31"></div>
+    <div class="row4 column4 grid-area" id="32"></div>
+    <div class="row4 column5 grid-area" id="33"></div>
+    <div class="row4 column6 grid-area" id="34"></div>
+    <div class="row5 column0 grid-area" id="35"></div>  
+    <div class="row5 column1 grid-area" id="36"></div>
+    <div class="row5 column2 grid-area" id="37"></div>
+    <div class="row5 column3 grid-area" id="38"></div>
+    <div class="row5 column4 grid-area" id="39"></div>
+    <div class="row5 column5 grid-area" id="40"></div>
+    <div class="row5 column6 grid-area" id="41"></div>
+    <div class="row6 column0 grid-area" id="42"></div>  
+    <div class="row6 column1 grid-area" id="43"></div>
+    <div class="row6 column2 grid-area" id="44"></div>
+    <div class="row6 column3 grid-area" id="45"></div>
+    <div class="row6 column4 grid-area" id="46"></div>
+    <div class="row6 column5 grid-area" id="47"></div>
+    <div class="row6 column6 grid-area" id="48"></div>
   </div>
   <button class="btn btn-outline-primary" id="reset-game" type="reset" hidden>Reset</button>
   <button id="lightNDark"></button>

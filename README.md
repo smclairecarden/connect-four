@@ -1,8 +1,8 @@
 # Connect-4
 
 ## About:
-  - Connect Four is a two player game in which players start with  21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player is able to get four in a row either vertically, horizontally or diagonally the game is over.
-  - My game includes sound effects, and a light/dark mode based on user preference.
+  - Connect Four is a two-player game in which players start with 21 chips each and take turns dropping them into a 7 X 6 vertical board. When a player gets four in a row, either vertically, horizontally, or diagonally the game is over.
+  - My game includes sound effects and a light/dark mode based on user preference.
 
 ## Getting Started:
  - Play the game here - <a href='https://clairecarden-connect-four.surge.sh/'>Connect-4</a>
@@ -27,7 +27,7 @@
   - Falling animation for chips
   - Function to track how many wins each player has
   - Computer player option for people playing the game by themselves 
-  - Make it playable on phones
+  - Make it playable on mobile devices
 
 ## Credits:
 - My chip sound effect - [FreeSound](https://freesound.org/people/discokingmusic/sounds/271387/)
