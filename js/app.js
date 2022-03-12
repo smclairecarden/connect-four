@@ -99,12 +99,12 @@ function renderTurn() {
 
 function getWinner() {
 winningCombos.forEach(function(combo){
-    let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
-  if(youWin === 4) {
-    confetti.start(2000)
-    party.volume = .10
-    party.play()
-    return winner = nextTurn  
+  let youWin = Math.abs(gameSquares[combo[0]] + gameSquares[combo[1]] + gameSquares[combo[2]] + gameSquares[combo[3]])
+    if(youWin === 4) {
+      confetti.start(2000)
+      party.volume = .10
+      party.play()
+      return winner = nextTurn  
     }
   })
 }
