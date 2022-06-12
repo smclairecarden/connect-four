@@ -102,10 +102,43 @@ h2 {
 
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 1.5rem;
+    font-size: small;
     justify-content: center;
-    align-items: center;
-    max-width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 300px;
+    min-height: 250px;
+  }
+
+  .grid-area {
+    height: 30%;
+    width: 50%;
+    border-radius: 50%;
+    border: 2px solid blue;
+    padding: 15px;
+  }
+
+  #lightNDark {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  #reset-game {
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
 }
 
