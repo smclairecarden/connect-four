@@ -101,12 +101,6 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    font-size: small;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 5px;
-  }
 
   h1 {
     font-size: 50px;
@@ -123,11 +117,11 @@ h2 {
   }
 
   .grid-area {
-    height: 30%;
+    height:40%;
     width: 50%;
     border-radius: 50%;
-    border: 2px solid blue;
-    padding: 15px;
+    border: 4px solid blue;
+    padding: 16px;
   }
 
   #lightNDark {
