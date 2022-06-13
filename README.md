@@ -27,7 +27,6 @@
   - Falling animation for chips
   - Function to track how many wins each player has
   - Computer player option for people playing the game by themselves 
-  - Make it playable on mobile devices
 
 ## Credits:
 - My chip sound effect - [FreeSound](https://freesound.org/people/discokingmusic/sounds/271387/)
